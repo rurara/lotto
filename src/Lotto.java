@@ -8,21 +8,24 @@ public class Lotto {
 	 * @param args
 	 */
 	static Random random = new Random();
-	public static void main(String[] args) {
 
-//		int[] print = new int[ ] {0, 0, 0, 0, 0, 0};
-		new Lotto().printLotto();
-		
-		
+	public static void main(String[] args) {
+		new Lotto().getLotto();
 	}
-	public void printLotto() {
+	
+	public int[] getLotto() {
+		
+		int[] numbers = new int[5];
+		
 		for (int i = 0; i <=6; i++){
-//			if (print[i] != getNumber()){
-//				print[i] = n1;
+//			if (numbers[i] != getNumber()){
+				numbers[i] = getNumber();
 //			}
 			System.out.println(getNumber());
 		}
+		return numbers;
 	}
+	
 	private static int getNumber(){
 		return random.nextInt(45) + 1;
 	}
